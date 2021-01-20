@@ -6,7 +6,7 @@ Docker lastpass is a binary written in golang to synchronize your lastpass secre
 
 docker-lastpass use gret [lastpass-go](https://github.com/ansd/lastpass-go) library.
 
-## Requierement 
+## Requierement
 
 * Lastpass Account (Free or premium)
 * [Docker Swarm](https://docs.docker.com/engine/swarm/) (Docker Secret is unavailable in docker standalone)
@@ -25,7 +25,7 @@ docker-lastpass use gret [lastpass-go](https://github.com/ansd/lastpass-go) libr
 | `--config`   | Set config file path | :x:                | `config.toml` |
 | `--username` | Lastpass Username    | :heavy_check_mark: |               |
 | `--password` | Lastpass Password    | :heavy_check_mark: |               |
-| `--otp`      | One TIme Password    | :x:                |               |
+| `--otp`      | One Time Password    | :x:                |               |
 
 ### Configuration File
 
@@ -67,3 +67,5 @@ jn9rqksbf00xxx   lastpass_test-secret_Username                 xx days ago      
 ## Limitation
 
 Lastpass API not provide timestamp for edit secret. it is therefore impossible to modify an existing secret. It is therefore to delete the secret in docker so that it can be recreated.
+
+
