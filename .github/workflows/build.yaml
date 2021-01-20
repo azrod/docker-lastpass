@@ -39,8 +39,8 @@ jobs:
 
     ## runs go build ./...
     - name: Build
-      run: go build ./... -o docker/docker-lastpass
+      run: go build -o docker/docker-lastpass
 
     ## Builds our docker image!
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file docker/Dockerfile --tag my-image-name:$(date +%s)
