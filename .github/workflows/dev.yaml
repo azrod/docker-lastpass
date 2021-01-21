@@ -38,6 +38,7 @@ jobs:
     ## runs go build ./...
     - name: Build
       run: go build -o docker/docker-lastpass
+
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
     - name: Set up Docker Buildx
@@ -47,13 +48,11 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Move to dir
-      run: cd docker
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        context: .
-        file: ./Dockerfile
+        context: docker
+        file: docker/Dockerfile
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
         push: true
         tags: |
