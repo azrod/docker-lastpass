@@ -4,7 +4,7 @@
 
 Docker lastpass is a binary written in golang to synchronize your lastpass secrets with docker secret.
 
-docker-lastpass use gret [lastpass-go](https://github.com/ansd/lastpass-go) library.
+docker-lastpass use great [lastpass-go](https://github.com/ansd/lastpass-go) library.
 
 ## Requierement
 
@@ -14,7 +14,6 @@ docker-lastpass use gret [lastpass-go](https://github.com/ansd/lastpass-go) libr
 ## Usage
 
 ```bash
-
 ./docker-lastpass --config config.toml --username <lastpass-email> --password <lastpass-password>
 ```
 
@@ -45,11 +44,9 @@ lists = []
 ```
 
 **Secrets**
-
 In groups add one or more "Folder" name in your lastpass. All secrets of each group will be synchronized.
 
 In list add one or more secret "Name".
-
 
 ## Docker Secret
 
