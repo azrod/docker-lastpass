@@ -39,7 +39,7 @@ jobs:
 
     ## runs go build ./...
     - name: Build
-      run: go build -o docker/docker-lastpass
+      run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o docker/docker-lastpass
 
     - name: List File
       run: ls -la *
@@ -61,7 +61,7 @@ jobs:
 
     - name: build the image
       run: |
-        GOOS=linux GOARCH=amd64 CGO_ENABLED=0 docker buildx build --push \
+        docker buildx build --push \
         -f docker/Dockerfile \
         --tag azrodio/docker-lastpass:dev \
         --platform linux/amd64,linux/arm/v7,linux/arm64 .
